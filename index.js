@@ -18,6 +18,10 @@ app.get('/hello-world', (req, res) => {
     res.send('Hello World!');
 });
 
+// init db client
+const client = require('./db/client');
+client.connect();
+
 // init server
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
