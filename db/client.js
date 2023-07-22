@@ -1,6 +1,9 @@
 const { Client } = require('pg');
+const dotenv = require('dotenv');
 
-const connectionString = 'https://localhost:5432/teamun';
+dotenv.config();
+
+const connectionString = process.env.POSTGRESQL_DB;
 
 // create new client
 const client = new Client({

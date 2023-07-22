@@ -1,6 +1,9 @@
+// import dependencies
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+
+// init express and port
 const app = express();
 const PORT = 8080;
 
@@ -21,6 +24,9 @@ app.get('/hello-world', (req, res) => {
 // init db client
 const client = require('./db/client');
 client.connect();
+
+// init api router
+app.use('/api', require('./api'));
 
 // init server
 app.listen(PORT, () => {
